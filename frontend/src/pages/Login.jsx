@@ -27,7 +27,7 @@ const Login = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/auth/login",
+        "http://localhost:6000/api/auth/login",
         { email, password }
       );
       if (response.data.success) {
@@ -57,7 +57,7 @@ const Login = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/auth/otp-login",
+        "http://localhost:6000/api/auth/otp-login",
         { phone }
       );
       if (response.data.success) {

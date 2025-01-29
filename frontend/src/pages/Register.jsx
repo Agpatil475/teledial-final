@@ -15,7 +15,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/auth/register",
+        "http://localhost:6000/api/auth/register",
         { name, email, phone, password }
       );
 

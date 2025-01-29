@@ -11,7 +11,7 @@ const OtpLogin = () => {
   const handleSendOtp = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/auth/generate-otp",
+        "http://localhost:6000/api/auth/generate-otp",
         { phone }
       );
 
@@ -29,7 +29,7 @@ const OtpLogin = () => {
   const handleVerifyOtp = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/auth/verify-otp",
+        "http://localhost:6000/api/auth/verify-otp",
         { phone, otp }
       );
       if (response.data.success) {

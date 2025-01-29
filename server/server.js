@@ -11,7 +11,7 @@ dotenv.config();
 
 // Initialize the Express app
 const app = express();
-const port = 5000;
+const port = 6000;
 
 // Middleware setup
 app.use(cors()); // Allow cross-origin requests
@@ -41,12 +41,10 @@ app.post("/api/add-user", async (req, res) => {
     // Check if user already exists by email or phone
     const existingUser = await User.findOne({ $or: [{ email }, { phone }] });
     if (existingUser) {
-      return res
-        .status(400)
-        .json({
-          success: false,
-          message: "User already exists with this email or phone.",
-        });
+      return res.status(400).json({
+        success: false,
+        message: "User already exists with this email or phone.",
+      });
     }
 
     // Hash password before saving
